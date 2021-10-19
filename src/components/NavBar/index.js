@@ -1,7 +1,8 @@
 import React from 'react'
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavBarElements'
+import { FiShoppingCart } from 'react-icons/fi'
 
-const Navbar = () => {
+const Navbar = ({skate, clothes, shoes, accessories, contact, goToCart }) => {
     return (
         <>
             <Nav>
@@ -11,27 +12,24 @@ const Navbar = () => {
                 <Bars/>
                 <NavMenu>
                     <NavLink to="/skate" activeStyle>
-                        Skate
+                        {skate}
                     </NavLink>
-                    <NavLink to="/indumentaria" activeStyle>
-                        Indumentaria
+                    <NavLink to="/clothes" activeStyle>
+                        {clothes}
                     </NavLink>
-                    <NavLink to="/zapatillas" activeStyle>
-                        Zapatillas
+                    <NavLink to="/shoes" activeStyle>
+                        {shoes}
                     </NavLink>
-                    <NavLink to="/accesorios" activeStyle>
-                        Accesorios
+                    <NavLink to="/accessories" activeStyle>
+                        {accessories}
                     </NavLink>
-                    <NavLink to="/contacto" activeStyle>
-                        Contacto
+                    <NavLink to="/contact" activeStyle>
+                        {contact}
                     </NavLink>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/signup" className="CACA">
-                        Inscribirse
-                    </NavBtnLink>
-                    <NavBtnLink to="/signin">
-                        Iniciar Sesión
+                    <NavBtnLink to="/cart">
+                        {goToCart}   <FiShoppingCart size="1.2em" title="Go to Cart" style={{margin: "-5px", marginLeft: "1px"}}/>
                     </NavBtnLink>
                 </NavBtn>
             </Nav>
