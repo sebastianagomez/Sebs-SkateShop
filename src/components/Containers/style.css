@@ -1,0 +1,10 @@
+.itemCount{
+    display: block;
+    border: 1px solid black;
+    width: 250px;
+}
+
+.myCustomBlockCount{
+    display: flex;
+    justify-content: space-around;
+}
