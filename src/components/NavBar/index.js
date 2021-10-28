@@ -11,7 +11,7 @@ const Navbar = ({skate, clothes, shoes, accessories, contact, goToCart }) => {
                 </NavLink>
                 <Bars/>
                 <NavMenu>
-                    <NavLink to="/skate" activeStyle>
+                    <NavLink to="/detalle/:idCategoria" activeStyle>
                         {skate}
                     </NavLink>
                     <NavLink to="/clothes" activeStyle>

@@ -1,7 +1,8 @@
 import './App.css';
 import Navbar from './components/NavBar';
 import ItemListContainer from "./components/Containers/ItemListContainer";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   // NavBar 
@@ -17,8 +18,13 @@ function App() {
 
   return (
     <Router>
-      <Navbar skate={skate} clothes={clothes} shoes={shoes} accessories={accessories} contact={contact} goToCart={goToCart}/>
-      <ItemListContainer greeting={greeting}/>
+      <Switch>
+        <Route exact path="/">
+          <Navbar skate={skate} clothes={clothes} shoes={shoes} accessories={accessories} contact={contact} goToCart={goToCart}/>
+          <ItemListContainer greeting={greeting}/>
+          <ItemDetailContainer />
+        </Route>
+      </Switch>      
     </Router>
   );
 }
