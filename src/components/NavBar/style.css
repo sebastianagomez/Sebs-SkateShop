@@ -1,0 +1,78 @@
+.myCustomNav{
+    background: #000;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.myCustomNav-NavLink{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.myCustomNav-NavLink:active{
+    color: #15cdfc;
+}
+
+.Bars{
+    display: none;
+    color: #fff;
+}
+
+.myCustomNav-NavMenu{
+    display: flex;
+    align-items: center;
+    margin-right: -24px;
+}
+
+.myCustomNav-NavBtn{
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+}
+
+.myCustomNav-NavBtnLink{
+    border-radius: 4px;
+    background: #256ce1;
+    padding: 10px 22px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.myCustomNav-NavBtnLink:hover{
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+}
+
+@media screen and (max-width: 787px) {
+    .Bars{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        margin-left: 24px;
+    }
+
+    .myCustomNav-NavMenu{
+        display: none;
+    }
+
+    .myCustomNav-NavBtn{
+        display: none;
+    }
+
+}

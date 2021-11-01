@@ -19,11 +19,17 @@ function App() {
   return (
     <Router>
       <Switch>
+        
         <Route exact path="/">
           <Navbar skate={skate} clothes={clothes} shoes={shoes} accessories={accessories} contact={contact} goToCart={goToCart}/>
-          <ItemListContainer greeting={greeting}/>
-          <ItemDetailContainer />
+          <ItemListContainer />
         </Route>
+
+        <Route exact path="/detalle/:id">
+          <Navbar skate={skate} clothes={clothes} shoes={shoes} accessories={accessories} contact={contact} goToCart={goToCart}/>
+          <ItemDetailContainer/>
+        </Route>
+
       </Switch>      
     </Router>
   );

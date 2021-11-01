@@ -8,3 +8,18 @@
     display: flex;
     justify-content: space-around;
 }
+
+.myCustomCard-photo{
+    width: 350px;
+    height: 450px;
+}
+
+.myCustomItemList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.myCustomItemList div{
+    justify-self: center;
+}

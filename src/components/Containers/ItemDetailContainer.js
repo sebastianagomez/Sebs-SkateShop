@@ -14,7 +14,8 @@ export const ItemDetailContainer = () => {
 
     return (
         <>
-            <ItemDetail oneProduct={oneProduct} />
+            <ItemDetail oneProduct={oneProduct}/>
         </>
     );
+
 };

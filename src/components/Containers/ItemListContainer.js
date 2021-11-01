@@ -21,18 +21,8 @@ export function ItemListContainer({ greeting }) {
             .catch((err) => console.log(err));
     }, []);
 
-
-    function showCantityProducts(total) {
-        console.log(`la cantidad total es ${total}`);
-    };
         return (
-            <div>   
-                <p>{greeting}</p>   
-                <ItemCount
-                    stock={10}
-                    initial={1}
-                    onAdd={showCantityProducts}
-                />
+            <div>
                 <ItemList product={product} />
             </div>
         );
