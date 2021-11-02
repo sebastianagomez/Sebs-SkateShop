@@ -4,7 +4,7 @@ const products = [
         title: "Tony Hawk Rider",
         stock: 5,
         photo: "./assets/images/skate-1.jpeg",
-        price: 500,
+        price: 5100,
         category: "skate"
     },
     {
@@ -37,15 +37,15 @@ const products = [
         stock: 0,
         photo: "./assets/images/skate-5.jpg",
         price: 750,
-        category: "skate"
+        category: "shoes"
     },
     {
-        id: 5,
+        id: 6,
         title: "Rodney Mullen 360°",
-        stock: 0,
+        stock: 8,
         photo: "./assets/images/skate-6.jpg",
         price: 750,
-        category: "skate"
+        category: "clothes"
     }
 ];
 
@@ -68,4 +68,4 @@ export const getFetchOneProduct = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(OneProduct);
     }, 2000);
-});
+}); 

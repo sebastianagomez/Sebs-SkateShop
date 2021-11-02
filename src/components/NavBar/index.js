@@ -12,19 +12,19 @@ const Navbar = ({skate, clothes, shoes, accessories, contact, goToCart }) => {
                 </NavLink>
                 <Bars className="Bars"/>
                 <NavMenu className="myCustomNav-NavMenu">
-                    <NavLink className="myCustomNav-NavLink" to="/detalle/:idCategoria" activeStyle>
+                    <NavLink className="myCustomNav-NavLink" to="/categoria/skate" activeStyle>
                         {skate}
                     </NavLink>
-                    <NavLink className="myCustomNav-NavLink" to="/clothes" activeStyle>
+                    <NavLink className="myCustomNav-NavLink" to="/categoria/clothes" activeStyle>
                         {clothes}
                     </NavLink>
-                    <NavLink className="myCustomNav-NavLink" to="/shoes" activeStyle>
+                    <NavLink className="myCustomNav-NavLink" to="/categoria/shoes" activeStyle>
                         {shoes}
                     </NavLink>
-                    <NavLink className="myCustomNav-NavLink" to="/accessories" activeStyle>
+                    <NavLink className="myCustomNav-NavLink" to="/categoria/accessories" activeStyle>
                         {accessories}
                     </NavLink>
-                    <NavLink className="myCustomNav-NavLink" to="/contact" activeStyle>
+                    <NavLink className="myCustomNav-NavLink" to="/categoria/contact" activeStyle>
                         {contact}
                     </NavLink>
                 </NavMenu>

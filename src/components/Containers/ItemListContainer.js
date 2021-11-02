@@ -7,19 +7,30 @@ import { getFetch } from "../Services/getFetch.js";
 
 export function ItemListContainer({ greeting }) {
 
-    // const { idCategoria } = useParams();
+    const { id } = useParams();
 
-    // console.log(idCategoria)
+    console.log(id)
 
     const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getFetch
+        if (id){
+            getFetch
+            .then((res) => {
+                setProduct(res.filter(prod => prod.category == id ));
+            })
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false))
+        }else {
+            getFetch
             .then((res) => {
                 setProduct(res);
             })
-            .catch((err) => console.log(err));
-    }, []);
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false))
+        }        
+        }, [id]);
 
         return (
             <div>
