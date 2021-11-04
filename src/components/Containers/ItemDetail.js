@@ -1,7 +1,11 @@
 import React from "react";
 import { ItemCount } from "./ItemCount";
+import { useCartContext} from "../../context/CartContext"
 
 export const ItemDetail = ({ oneProduct }) => {
+
+    const {cartList} = useCartContext()
+    console.log(cartList)
 
     function showCantityProducts(total) {
         console.log(`la cantidad total es ${total}`);

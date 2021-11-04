@@ -14,10 +14,18 @@
     height: 450px;
 }
 
+.myCustomCartDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .myCustomItemList{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    gap: 2rem;
 }
 
 .myCustomItemList div{
