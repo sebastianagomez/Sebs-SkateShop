@@ -4,12 +4,16 @@ import "./style.css"
 export function ItemCount({ stock, initial, onAdd }) {
     let [count, setCount] = useState(initial);
 
-    function addProduct() {
-        setCount(count + 1);
-    }
-
     function restProduct() {
         setCount(count - 1);
+    }
+
+    function addProduct() {
+        setCount(count + 1);
+    }    
+
+    const onAddCart = () => {
+        onAdd(count);
     }
 
     return (
@@ -23,7 +27,7 @@ export function ItemCount({ stock, initial, onAdd }) {
                 <button onClick={addProduct} disabled={count === stock}>
                     +
                 </button>                
-                <button onClick={() => onAdd(count)}>Add to cart</button>
+                <button onClick={() => onAddCart()}>Add to cart</button>
             </div>
         </div>
     );

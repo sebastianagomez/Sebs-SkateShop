@@ -4,26 +4,43 @@ export const CartContext = createContext()
 
 export const useCartContext = () => useContext(CartContext)
 
+
 const CartContextProvider = ({children}) =>{
 
     const [cartList, setCartList] = useState([])
 
-    function addToCart (items){
-        setCartList([
-            ...cartList,
-            items
-        ])
-    }
+    const addToCartList = (itemAdded) => {
+        const findItem = cartList.find(
+            (itemInCart) => itemInCart.oneProduct.id === itemAdded.oneProduct.id
+        );
+        if (findItem) {
+            findItem.quantity = findItem.quantity + itemAdded.quantity;
+            setCartList(cartList);
+        } else {
+            setCartList((previousItems) => [...previousItems, itemAdded]);
+        }
+    };
 
-    const mostrarListado = () =>{
-        console.log(cartList)
-    }
+    const removeItem = (idItemToRemove) => {
+        setCartList(
+            cartList.filter(
+                (itemSearched) => itemSearched.oneProduct.id !== idItemToRemove
+            )
+        );
+    };
+
+    const clearCart = () => {
+        setCartList([]);
+    };
 
     return (
-        <CartContext.Provider value = {[
+        <CartContext.Provider value = {{
             cartList,
-            mostrarListado
-        ]}>
+            addToCartList,
+            removeItem,
+            clearCart,
+
+        }}>
             {children}
         </CartContext.Provider>
     )

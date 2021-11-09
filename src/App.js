@@ -4,6 +4,7 @@ import ItemListContainer from "./components/Containers/ItemListContainer";
 import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CartContextProvider from './context/CartContext';
+import { Cart } from './components/Cart/Cart';
 
 function App() {
   // NavBar 
@@ -29,7 +30,7 @@ function App() {
           <Route exact path="/detalle/:id">
             <ItemDetailContainer/>
           </Route>
-
+          <Route exact path="/cart" component={Cart}/>
         </Switch>      
       </Router>
     </CartContextProvider>

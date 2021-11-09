@@ -1,14 +1,21 @@
 import React from "react";
+import { useState } from "react";
 import { ItemCount } from "./ItemCount";
+import { Link } from "react-router-dom"
 import { useCartContext} from "../../context/CartContext"
 
-export const ItemDetail = ({ oneProduct }) => {
+export const ItemDetail = ({ oneProduct }) => {    
 
-    const {cartList} = useCartContext()
-    console.log(cartList)
+    const [quantity, setQuantity] = useState(0);
 
-    function showCantityProducts(total) {
-        console.log(`la cantidad total es ${total}`);
+    const [purchaseQuantity, setPurchasequantity] = useState(false);
+
+    const {addToCartList} = useCartContext()
+
+    const addToCart = (quantityAdded) => {
+        setQuantity(quantityAdded);    
+        addToCartList({ oneProduct, quantity: quantityAdded });
+        setPurchasequantity(true);
     };
 
     return (
@@ -17,7 +24,23 @@ export const ItemDetail = ({ oneProduct }) => {
             <img src={oneProduct.photo} alt={oneProduct.title} />
             <p>{oneProduct.detail}</p>
             <h3>$ {oneProduct.price}</h3>
-            <ItemCount stock={oneProduct.stock} initial={1} onAdd={showCantityProducts} />            
+            {purchaseQuantity ? (
+                <div>
+                    <Link to="/">
+                        <button>Back</button>
+                    </Link>
+                    <Link to="/cart">
+                        {" "}<button>Buy product</button>{" "}
+                    </Link>                    
+                </div>
+            ) : (
+                <ItemCount
+                    stock={oneProduct.stock}
+                    initial={quantity}
+                    onAdd={addToCart}
+                />
+            )}
+            <p>{quantity} Unit(s)</p>
         </div>
     );
 };
