@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Cart = () => {
     
-    const { cartList, removeItem, clearCart } = useCartContext();
+    const { cartList, removeItem, clearCart, totalPrice } = useCartContext();
 
     return (
         <div>
@@ -33,7 +33,7 @@ export const Cart = () => {
                                 <td>{itemAdded.oneProduct.title}</td>
                                 <td>{itemAdded.quantity}</td>
                                 <td>$ {itemAdded.oneProduct.price}</td>
-                                <td>$ {itemAdded.oneProduct.price * itemAdded.quantity}</td>
+                                <td>$ {totalPrice}</td>
                                 <td><button onClick={() => removeItem(itemAdded.oneProduct.id)}>
                                         Delete product
                                     </button>

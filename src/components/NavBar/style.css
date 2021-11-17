@@ -40,7 +40,7 @@
 .myCustomNav-NavBtnLink{
     border-radius: 4px;
     background: #256ce1;
-    padding: 10px 22px;
+    padding: 2px 30px;
     color: #fff;
     outline: none;
     border: none;
@@ -48,6 +48,13 @@
     transition: all 0.2s ease-in-out;
     text-decoration: none;
 }
+
+.ShoppingCart{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+}
+
 
 .myCustomNav-NavBtnLink:hover{
     transition: all 0.2s ease-in-out;

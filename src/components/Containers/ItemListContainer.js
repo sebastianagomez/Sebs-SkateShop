@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { ItemCount } from "./ItemCount";
 import { useParams } from 'react-router-dom';
 import { ItemList } from "./ItemList";
 import { getFetch } from "../Services/getFetch.js";
+import { getFirestore } from "../Services/getFirestore";
 
 export function ItemListContainer({ greeting }) {
 
@@ -15,6 +15,18 @@ export function ItemListContainer({ greeting }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
+
+        // GET FIRESTORE: 
+
+        const db = getFirestore()
+        // const dbQuery = db.collection("items").get()
+
+        // dbQuery
+        // .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+
+
+
         if (id){
             getFetch
             .then((res) => {
