@@ -2,45 +2,55 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { ItemList } from "./ItemList";
-import { getFetch } from "../Services/getFetch.js";
+// import { getFetch } from "../Services/getFetch.js";
 import { getFirestore } from "../Services/getFirestore";
 
-export function ItemListContainer({ greeting }) {
+export function ItemListContainer() {
 
     const { id } = useParams();
-
-    console.log(id)
 
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
-
+        
         // GET FIRESTORE: 
 
-        const db = getFirestore()
-        // const dbQuery = db.collection("items").get()
-
-        // dbQuery
-        // .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
-
-
+        const db = getFirestore();
 
         if (id){
-            getFetch
-            .then((res) => {
-                setProduct(res.filter(prod => prod.category == id ));
-            })
-            .catch((err) => console.log(err))
-            .finally(() => setLoading(false))
+            const dbCategory = db
+                .collection("items")
+                .where("category", "==", id)
+                .get();
+            dbCategory
+                .then((response) =>
+                    setProduct(
+                        response.docs.map((item) => ({
+                            id: item.id,
+                            ...item.data(),
+                        }))
+                    )
+                )
+                .catch((error) => alert("Error:", error))
+                .finally(() => setLoading(false));
         }else {
-            getFetch
-            .then((res) => {
-                setProduct(res);
-            })
-            .catch((err) => console.log(err))
-            .finally(() => setLoading(false))
+            const dbCategory = db
+                .collection("items")
+                .orderBy("category")
+                .get();
+
+            dbCategory
+                .then((response) =>
+                    setProduct(
+                        response.docs.map((item) => ({
+                            id: item.id,
+                            ...item.data(),
+                        }))
+                    )
+                )
+                .catch((error) => alert("Error:", error))
+                .finally(() => setLoading(false));
         }        
         }, [id]);
 

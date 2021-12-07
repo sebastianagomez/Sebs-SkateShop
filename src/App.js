@@ -15,24 +15,27 @@ function App() {
   const contact = "CONTACT"
   const goToCart = "CART"
 
-  // ItemList
-  const greeting = "Something here"
-
   return (
     <CartContextProvider>
+
       <Router>
+
         <Navbar skate={skate} clothes={clothes} shoes={shoes} accessories={accessories} contact={contact} goToCart={goToCart}/>
-        <Switch>        
-          <Route exact path="/">          
-            <ItemListContainer />
-          </Route>
+
+        <Switch>      
+
+          <Route exact path="/" component={ItemListContainer}/>
+
           <Route exact path="/categoria/:id" component={ItemListContainer}/>
-          <Route exact path="/detalle/:id">
-            <ItemDetailContainer/>
-          </Route>
+
+          <Route exact path="/detalle/:id" component={ItemDetailContainer}/>
+
           <Route exact path="/cart" component={Cart}/>
-        </Switch>      
+
+        </Switch>
+
       </Router>
+
     </CartContextProvider>
   );
 }

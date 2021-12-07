@@ -6,7 +6,7 @@ import { useCartContext} from "../../context/CartContext"
 
 export const ItemDetail = ({ oneProduct }) => {    
 
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
 
     const [purchaseQuantity, setPurchasequantity] = useState(false);
 

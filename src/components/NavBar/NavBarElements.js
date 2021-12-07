@@ -18,11 +18,5 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled(Link)`
-
-  /* Second Nav */
-  
-  &:hover {
-    
-  }
 `;
 

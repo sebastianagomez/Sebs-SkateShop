@@ -21,7 +21,7 @@ export function ItemCount({ stock, initial, onAdd }) {
             <h4>Stock: {stock} </h4>
             <h3>Selected Products: {count} </h3>
             <div className="myCustomBlockCount">
-                <button onClick={restProduct} disabled={count < 1}>
+                <button onClick={restProduct} disabled={count < 2}>
                     -
                 </button>
                 <button onClick={addProduct} disabled={count === stock}>

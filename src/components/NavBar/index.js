@@ -3,7 +3,7 @@ import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavBarElements'
 import CartWidget from './CartWidget';
 import "./style.css"
 
-const Navbar = ({skate, clothes, shoes, accessories, contact, goToCart }) => {
+const Navbar = ({skate, clothes, shoes, accessories, goToCart }) => {
     return (
         <>
             <Nav className="myCustomNav">
@@ -23,9 +23,6 @@ const Navbar = ({skate, clothes, shoes, accessories, contact, goToCart }) => {
                     </NavLink>
                     <NavLink className="myCustomNav-NavLink" to="/categoria/accessories" activeStyle>
                         {accessories}
-                    </NavLink>
-                    <NavLink className="myCustomNav-NavLink" to="/categoria/contact" activeStyle>
-                        {contact}
                     </NavLink>
                 </NavMenu>
                 <NavBtn className="myCustomNav-NavBtn">
