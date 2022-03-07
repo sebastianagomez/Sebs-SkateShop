@@ -6,6 +6,8 @@ My web page is an Skate ecommerce.It is based on the sales of skateboards, cloth
 
 Each product has its description with the opportunity to add to the cart as many products as you want depending on whether there is stock.
 
+The project doesn't contain any UI material yet as I gave it more focus on learning the framework.
+
 ## Node:
 
 - Install node - Version 14.17.3.
